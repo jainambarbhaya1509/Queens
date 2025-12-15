@@ -35,10 +35,10 @@ def login(url):
             )
         )
 
-        print("✅ Login successful")
+        print("Login successful")
 
     except TimeoutException:
-        print("❌ Login failed or CAPTCHA detected")
+        print("Login failed or CAPTCHA detected")
         return driver
 
     # Keep browser open for next commands
@@ -57,7 +57,7 @@ def solve_queens(driver):
 
 
     except NoSuchElementException:
-        print("❌ Could not find the game board.")
+        print("Could not find the game board.")
         return
 
 

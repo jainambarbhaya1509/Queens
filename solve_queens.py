@@ -34,24 +34,22 @@ def build_board_matrix(rows, cols, board_html):
     soup = BeautifulSoup(board_html, "html.parser")
     matrix = [[None for _ in range(cols)] for _ in range(rows)]
 
-    # Find all cells with data-cell-idx
+    
     cells = soup.find_all(attrs={"data-cell-idx": True})
 
     for cell in cells:
         idx = int(cell["data-cell-idx"])
         r = idx // cols
         c = idx % cols
-
-        # Get color from inline style if present
+        
         style = cell.get("style", "")
         color = None
         if "background-color" in style:
             color = style.split("background-color:")[1].split(";")[0].strip()
         else:
-            # Fallback: use the last class of the root node
             classes = cell.get("class", [])
             if classes:
-                color = classes[-1]  # last class as representative
+                color = classes[-1]  
 
         matrix[r][c] = (color, idx)
 
