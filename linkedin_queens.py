@@ -23,8 +23,8 @@ def login(url):
         username = wait.until(EC.presence_of_element_located((By.ID, "username")))
         password = wait.until(EC.presence_of_element_located((By.ID, "password")))
 
-        username.send_keys("jainambarbhaya1509@gmail.com")
-        password.send_keys("J@in@m1509")
+        username.send_keys("")
+        password.send_keys("")
         password.submit()
 
         # Wait for successful login
