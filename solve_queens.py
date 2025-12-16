@@ -227,3 +227,6 @@ def place_queens(driver, queen_indices):
 
     for el in queen_elements:
         actions.double_click(el).perform()
+
+
+# code
