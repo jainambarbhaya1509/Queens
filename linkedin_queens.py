@@ -23,8 +23,8 @@ def login(url):
         username = wait.until(EC.presence_of_element_located((By.ID, "username")))
         password = wait.until(EC.presence_of_element_located((By.ID, "password")))
 
-        username.send_keys(os.getenv("EMAIL"))
-        password.send_keys(os.getenv("PASSWORD"))
+        username.send_keys("jainambarbhaya1509@gmail.com")
+        password.send_keys("J@in@m1509")
         password.submit()
 
         # Wait for successful login
@@ -50,7 +50,9 @@ def solve_queens(driver):
 
     try:
         rows, cols, board = get_board(driver)
+        print(rows)
         matrix = build_board_matrix(rows, cols, board)
+        print(matrix)
         idx = solve(matrix)
         place_queens(driver, idx)
         print("Queens Solved!")
@@ -68,5 +70,3 @@ solve_queens(driver)
 input("Done. Press ENTER to close browser...")
 
 driver.quit()
-
-# [0, 10, 20, 30, 33, 45, 51, 63]
